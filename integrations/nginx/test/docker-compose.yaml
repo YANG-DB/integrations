@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  opensearch:
+    image: opensearchproject/opensearch:2.5.0
+    container_name: opensearch
+    environment:
+      - discovery.type=single-node
+      - plugins.security.disabled=true
+    ports:
+      - 9200:9200
+      - 9600:9600
+    networks:
+      - www
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger
+    environment:
+      - SPAN_STORAGE_TYPE=opensearch
+    command: [
+      "--es.server-urls=http://opensearch:9200"
+    ]
+    restart: on-failure
+    ports:
+      - 16686:16686
+    networks:
+      - www
+  collector:
+    image: otel/opentelemetry-collector:latest
+    command: ["--config=/etc/volume/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector:/etc/volume
+    ports:
+      - 4317:4317
+    networks:
+      - www
+  nginx:
+    image: nginx-otel
+    build:
+      context: nginx-otel
+    volumes:
+      - ./nginx-otel/opentelemetry_module.conf:/etc/nginx/conf.d/opentelemetry_module.conf
+    ports:
+      - 8080:80
+    networks:
+      - www
+
+networks:
+  www:
