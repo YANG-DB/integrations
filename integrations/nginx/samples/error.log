@@ -1,0 +1,12 @@
+[07/Feb/2023:10:19:21 +0000] "ERROR: Connection reset by peer while reading response header from upstream"
+[07/Feb/2023:10:20:12 +0000] "ERROR: Failed to load SSL certificate, check path and permissions"
+[07/Feb/2023:10:20:59 +0000] "ERROR: Failed to bind socket, address already in use"
+[07/Feb/2023:10:22:03 +0000] "ERROR: FastCGI sent in stderr: "Primary script unknown""
+[07/Feb/2023:10:23:14 +0000] "ERROR: Bad gateway: no response from upstream server"
+[07/Feb/2023:10:25:01 +0000] "ERROR: Invalid URI in request GET /some-bad-url"
+[07/Feb/2023:10:25:51 +0000] "ERROR: Request time exceeded, client closed connection"
+[07/Feb/2023:10:26:39 +0000] "ERROR: Failed to start worker process, check system resources"
+[07/Feb/2023:10:27:12 +0000] "ERROR: Bad request: invalid client request line"
+[07/Feb/2023:10:28:05 +0000] "ERROR: No such file or directory: failed to access /path/to/nonexistent/file"
+2020/01/10 10:40:34 [error] 11010#0: *1 open() "/usr/local/Cellar/nginx/1.10.2_1/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
+2020/10/15 11:00:00 [error] 78866#78866: *18029 FastCGI sent in stderr: "PHP message: PHP Warning:  Declaration of FEE_Field_Terms::wrap($content, $taxonomy, $before, $sep, $after) should be compatible with FEE_Field_Post::wrap($content, $post_id = 0) in /var/www/xxx/web/wp-content/plugins/front-end-editor/php/fields/post.php on line 0
