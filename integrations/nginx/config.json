@@ -3,8 +3,8 @@
   "version": {
     "integ": "0.1.0",
     "schema": "1.0.0",
-    "resource": "^1.23.0",
-  }
+    "resource": "^1.23.0"
+  },
   "description": "Nginx HTTP server collector",
   "categories": [
     "web","http"
